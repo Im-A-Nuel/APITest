@@ -1,5 +1,6 @@
 package com.coding.myquote
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -29,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         getRandomQuote()
+
+        binding.btnAllQuotes.setOnClickListener {
+            startActivity(Intent(this@MainActivity, ListQuotesActivity::class.java))
+        }
     }
 
     private fun getRandomQuote() {
